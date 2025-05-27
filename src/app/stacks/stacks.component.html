@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="col">
+        <div class="row justify-content-center">
+            <h1 class="text-center">Stacks</h1>
+            <h2 class="text-center">Illustration</h2>
+            <div class="d-grid gap-2 d-md-flex mx-auto mb-3">
+                <button type="button" class="btn btn-secondary" (click)="pop()">Pop</button>
+                <button type="button" class="btn btn-secondary" (click)="push()">Push</button>
+                <button type="button" class="btn btn-secondary" (click)="peak()">Peak</button>
+                <button type="button" class="btn btn-secondary" (click)="isEmpty()">Is Empty</button>
+            </div>
+            <div class="d-grid gap-2 mb-3">
+                @for(item of stack; track item) {
+                <button type="button" class="btn btn-primary">{{item}}</button>
+                }
+            </div>
+            <hr>
+            <p class="text-center">A stack is a linear data structure that follows the Last In First Out (LIFO)
+                principle.</p>
+            <p class="text-center">Elements can be added or removed only from the top of the stack.</p>
+            <p class="text-center">Stacks are used in various applications such as function call management, expression
+                evaluation, and backtracking algorithms.</p>
+            <hr>
+            <h2 class="text-center">Stack Operations</h2>
+            <ul class="">
+                <li><strong>Push:</strong> Add an element to the top of the stack.</li>
+                <li><strong>Pop:</strong> Remove the top element from the stack.</li>
+                <li><strong>Peek:</strong> Retrieve the top element without removing it.</li>
+                <li><strong>isEmpty:</strong> Check if the stack is empty.</li>
+            </ul>
+
+        </div>
+    </div>
+</div>
