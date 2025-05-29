@@ -6,6 +6,12 @@ type Node<T> = {
   next: Node<T> | null;
 }
 
+type Alert = {
+  title: string;
+  message: string;
+  visible: boolean;
+}
+
 class Stack<T> implements Iterable<T> {
   private top: Node<T> | null = null;
 
@@ -67,7 +73,11 @@ export class StacksComponent {
   title = 'Stacks Animation';
   description = 'This page demonstrates the animation of stacks data structure.';
   stack: Stack<number> = new Stack();
-
+  alert: Alert = {
+    title: '',
+    message: '',
+    visible: false
+  }
   constructor() {
     // Initialize the stack with some values
     for (let i = 0; i < 5; i++) {
@@ -75,41 +85,49 @@ export class StacksComponent {
     }
   }
 
+  showAlert(title: string, message: string = ''): void {
+    this.alert = {
+      title: title,
+      message: message,
+      visible: true
+    }
+  }
+
   addRandomValue(): void {
-    this.stack.push(Math.floor(Math.random()*100));
+    this.stack.push(Math.floor(Math.random() * 100));
   }
 
   pop(): void {
     const poppedValue = this.stack.pop();
     if (poppedValue !== null) {
-      console.log(`Popped value: ${poppedValue}`);
+      this.showAlert('Removed : ', poppedValue + '');
     } else {
-      console.log('Stack is empty, nothing to pop.');
+      this.showAlert('Stack is empty, nothing to pop.');
     }
   }
 
   push(): void {
     const value = Math.floor(Math.random() * 100); // Generate a random number
     this.stack.push(value);
-    console.log(`Pushed value: ${value}`);
+    this.showAlert(`Pushed value: ${value}`);
   }
 
   peak(): void {
     const top = this.stack.peek();
-    if( top !== null) {
-      console.log(`Top value: ${top}`);
-    }else {
-      console.log('Stack is empty, nothing to peek.');
+    if (top !== null) {
+      this.showAlert(`Top value: ${top}`);
+    } else {
+      this.showAlert('Stack is empty, nothing to peek.');
     }
   }
 
   isEmpty(): boolean {
-    if(this.stack.isEmpty()){
-      console.log('Stack is empty.');
+    if (this.stack.isEmpty()) {
+      this.showAlert('Stack is empty.');
       return true;
     }
     else {
-      console.log('Stack is not empty.');
+      this.showAlert('Stack is not empty.');
       return false;
     }
   }
