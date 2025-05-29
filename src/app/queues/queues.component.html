@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="col">
+        <div class="row justify-content-center">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
+                        type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="illustration-tab" data-bs-toggle="tab" data-bs-target="#illustration"
+                        type="button" role="tab" aria-controls="illustration"
+                        aria-selected="false">Illustration</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <h1 class="text-center">Queues</h1>
+
+                    <hr>
+                    <p class="text-center">A queue is a linear </p>
+                    <p class="text-center">data structure that follows the First In First Out (FIFO) principle.</p>
+                    <p class="text-center">Elements can be added to the end of the queue and removed from the front.</p>
+                    <p class="text-center">Queues are used in various applications such as task scheduling,
+                        breadth-first
+                        search, and managing resources in a system.</p>
+                    <hr>
+                    <h2 class="text-center">Queue Operations</h2>
+                    <ul class="">
+                        <li><strong>Enqueue (Push):</strong> Add an element to the end of the queue.</li>
+                        <li><strong>Dequeue (Pop):</strong> Remove the fist element from the stack.</li>
+                        <li><strong>Peek:</strong> Retrieve the last element without removing it.</li>
+                        <li><strong>isEmpty:</strong> Check if the queue is empty.</li>
+                    </ul>
+                </div>
+                <div class="tab-pane fade" id="illustration" role="tabpanel" aria-labelledby="illustration-tab">
+                    <h2 class="text-center">Illustration</h2>
+                    <div class="d-grid gap-2 d-md-flex mx-auto mb-3">
+                        <button type="button" class="btn btn-secondary" (click)="dequeue()">Dequeue (Pop)</button>
+                        <button type="button" class="btn btn-secondary" (click)="enqueue()">Enqueue (Push)</button>
+                        <button type="button" class="btn btn-secondary" (click)="peak()">Peak</button>
+                        <button type="button" class="btn btn-secondary" (click)="isEmpty()">Is Empty</button>
+                        <button type="button" class="btn btn-secondary" (click)="length()">Length</button>
+                    </div>
+                    <div class="d-grid gap-2 d-md-flex mb-3">
+                        <button type="button" class="btn btn-secondary" disabled="true"> Head -> </button>
+                        @for(item of queue; track item) {
+                        <button type="button" class="btn btn-primary">{{item}}</button>
+                        }
+                        <button type="button" class="btn btn-secondary" disabled="true"> <- Tail</button>
+                    </div>
+                    @if(alert.visible){
+                        <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                            <strong>{{alert.title}}</strong>{{alert.message}}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
