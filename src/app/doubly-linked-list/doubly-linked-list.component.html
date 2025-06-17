@@ -1,0 +1,159 @@
+<div class="container">
+  <div class="col">
+    <div class="row justify-content-center">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link active"
+            id="home-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#home"
+            type="button"
+            role="tab"
+            aria-controls="home"
+            aria-selected="true"
+          >
+            Home
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="illustration-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#illustration"
+            type="button"
+            role="tab"
+            aria-controls="illustration"
+            aria-selected="false"
+          >
+            Illustration
+          </button>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div
+          class="tab-pane fade show active"
+          id="home"
+          role="tabpanel"
+          aria-labelledby="home-tab"
+        >
+          <h1 class="text-center">Doubly Linked List</h1>
+
+          <hr />
+          <p class="text-center">
+            A doubly linked list is a linear data structure in which each
+            element (node) points to both its previous and next node.
+          </p>
+          <p class="text-center">
+            This allows traversal in both forward and backward directions.
+          </p>
+          <p class="text-center">
+            It is used in applications such as navigation systems, undo
+            functionality in editors, and memory management.
+          </p>
+          <hr />
+          <h2 class="text-center">Common Operations</h2>
+          <ul>
+            <li>
+              <strong>Insert:</strong> Add a node at the beginning, end, or a
+              specific position.
+            </li>
+            <li>
+              <strong>Delete:</strong> Remove a node from the beginning, end, or
+              a specific position.
+            </li>
+            <li><strong>Search:</strong> Find a node with a specific value.</li>
+            <li>
+              <strong>Traversal:</strong> Traverse the list forward or backward.
+            </li>
+          </ul>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="illustration"
+          role="tabpanel"
+          aria-labelledby="illustration-tab"
+        >
+          <h2 class="text-center">Illustration</h2>
+          <div class="d-grid gap-2 d-md-flex mx-auto mb-3">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              (click)="addToHead()"
+            >
+              Add to head
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              (click)="addToTail()"
+            >
+              Add to tail
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              (click)="addAtIndex()"
+            >
+              Add at index
+            </button>
+            <button type="button" class="btn btn-secondary" (click)="isEmpty()">
+              Is Empty
+            </button>
+            <button type="button" class="btn btn-secondary" (click)="length()">
+              Length
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              (click)="removeAtHead()"
+            >
+              delete head
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              (click)="removeAtTail()"
+            >
+              delete tail
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              (click)="removeAtIndex()"
+            >
+              delete at position
+            </button>
+          </div>
+          <div class="d-grid gap-2 d-md-flex mb-3">
+            <button type="button" class="btn btn-secondary" disabled="true">
+              Head ->
+            </button>
+            @for(item of doublyLinkedList; track $index) {
+            <button type="button" class="btn btn-primary">{{ item }}</button>
+            }
+            <button type="button" class="btn btn-secondary" disabled="true">
+              <- Tail
+            </button>
+          </div>
+          @if(alert.visible){
+          <div
+            class="alert alert-primary alert-dismissible fade show"
+            role="alert"
+          >
+            <strong>{{ alert.title }}</strong
+            >{{ alert.message }}
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="alert"
+              aria-label="Close"
+            ></button>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
