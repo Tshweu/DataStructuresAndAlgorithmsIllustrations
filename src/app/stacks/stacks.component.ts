@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-// import { trigger, transition, style, animate } from '@angular/animations';
 
 type Node<T> = {
   value: T;
