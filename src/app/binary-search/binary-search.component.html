@@ -1,0 +1,153 @@
+<div class="container">
+  <div class="col">
+    <div class="row justify-content-center">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link active"
+            id="home-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#home"
+            type="button"
+            role="tab"
+            aria-controls="home"
+            aria-selected="true"
+          >
+            Home
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="illustration-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#illustration"
+            type="button"
+            role="tab"
+            aria-controls="illustration"
+            aria-selected="false"
+          >
+            Illustration
+          </button>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div
+          class="tab-pane fade show active"
+          id="home"
+          role="tabpanel"
+          aria-labelledby="home-tab"
+        >
+          <h1 class="text-center">Binary Search</h1>
+
+          <hr />
+          <p class="text-center">
+            Binary search is an efficient algorithm used to find an element in a
+            sorted array or list.
+          </p>
+          <p class="text-center">
+            It works by repeatedly dividing the search interval in half and
+            comparing the target value to the middle element.
+          </p>
+          <p class="text-center">
+            Binary search is significantly faster than linear search for large
+            datasets but requires the input to be sorted.
+          </p>
+          <hr />
+          <h2 class="text-center">Binary Search Steps</h2>
+          <ul>
+            <li>
+              <strong>Step 1:</strong> Identify the middle element of the sorted
+              array.
+            </li>
+            <li>
+              <strong>Step 2:</strong> Compare the target value with the middle
+              element.
+            </li>
+            <li>
+              <strong>Step 3:</strong>
+              <ul>
+                <li>If equal, the search is complete.</li>
+                <li>
+                  If the target is smaller, repeat the search in the left half.
+                </li>
+                <li>
+                  If the target is greater, repeat the search in the right half.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>Step 4:</strong> Repeat until the element is found or the
+              search interval is empty.
+            </li>
+          </ul>
+
+          <hr />
+          <h2 class="text-center">Binary Search Properties</h2>
+          <ul>
+            <li><strong>Time Complexity:</strong> O(log n)</li>
+            <li>
+              <strong>Space Complexity:</strong> O(1) for iterative, O(log n)
+              for recursive
+            </li>
+            <li><strong>Requirement:</strong> The input must be sorted</li>
+          </ul>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="illustration"
+          role="tabpanel"
+          aria-labelledby="illustration-tab"
+        >
+          <h2 class="text-center">Illustration</h2>
+          <div class="d-grid gap-2 d-md-flex mx-auto mb-3">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              (click)="interativeSearch()"
+            >
+              iterative search
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              (click)="recursiveSearch(0,arr.length - 1)"
+            >
+              recursive search
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              (click)="init()"
+            >
+              reset
+            </button>
+          </div>
+          <div class="d-grid gap-2 d-md-flex mb-3">
+            <button type="button" class="btn btn-secondary" disabled="true">
+              Search Value: {{searchValue}}
+            </button>
+            @for(item of arr; track $index) {
+              <button type="button" [disabled]="item.disabled" [class]="item.selected ? 'btn btn-primary' : 'btn btn-secondary'">{{ item.value }}</button>
+            }
+          </div>
+          @if(alert.visible){
+          <div
+            class="alert alert-primary alert-dismissible fade show"
+            role="alert"
+          >
+            <strong>{{ alert.title }}</strong
+            >{{ alert.message }}
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="alert"
+              aria-label="Close"
+            ></button>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
