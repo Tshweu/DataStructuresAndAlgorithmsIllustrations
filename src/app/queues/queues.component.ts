@@ -94,7 +94,9 @@ export class QueuesComponent {
   }
 
   generate():void{
-    this.queue.enqueue(Math.floor(Math.random()*100));
+    const val = Math.floor(Math.random()*100)
+    this.queue.enqueue(val);
+    this.showAlert('Added: ',val+'');
   }
 
   length():void{
@@ -103,7 +105,6 @@ export class QueuesComponent {
 
   enqueue(): void{
     this.generate();
-    this.showAlert('Added: ',this.queue.peek()+'');
   }
 
   dequeue(): void{
