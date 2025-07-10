@@ -1,0 +1,175 @@
+<div class="container">
+  <div class="col">
+    <div class="row justify-content-center">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link active"
+            id="home-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#home"
+            type="button"
+            role="tab"
+            aria-controls="home"
+            aria-selected="true"
+          >
+            Home
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="illustration-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#illustration"
+            type="button"
+            role="tab"
+            aria-controls="illustration"
+            aria-selected="false"
+          >
+            Illustration
+          </button>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div
+          class="tab-pane fade show active"
+          id="home"
+          role="tabpanel"
+          aria-labelledby="home-tab"
+        >
+          <h1 class="text-center">Graphs</h1>
+
+          <hr />
+          <p class="text-center">
+            A graph is a non-linear data structure consisting of nodes
+            (vertices) connected by edges.
+          </p>
+          <p class="text-center">
+            Graphs can be directed or undirected, weighted or unweighted, and
+            are used to model various real-world problems.
+          </p>
+          <p class="text-center">
+            Applications include social networks, shortest path finding (e.g.,
+            Google Maps), recommendation systems, and network topology.
+          </p>
+          <hr />
+          <h2 class="text-center">Graph Representations</h2>
+          <ul>
+            <li>
+              <strong>Adjacency Matrix:</strong> A 2D array where each cell
+              indicates the presence (and weight) of an edge between vertices.
+            </li>
+            <li>
+              <strong>Adjacency List:</strong> Each node maintains a list of its
+              adjacent vertices; more space-efficient for sparse graphs.
+            </li>
+          </ul>
+          <h2 class="text-center">Common Graph Operations</h2>
+          <ul>
+            <li>
+              <strong>Add Vertex:</strong> Insert a new node into the graph.
+            </li>
+            <li>
+              <strong>Add Edge:</strong> Create a connection between two
+              vertices.
+            </li>
+            <li>
+              <strong>Remove Vertex:</strong> Delete a node and all its
+              connected edges.
+            </li>
+            <li>
+              <strong>Remove Edge:</strong> Delete a specific connection between
+              two nodes.
+            </li>
+            <li>
+              <strong>Traversal:</strong> Visit all nodes in a specific manner
+              (e.g., Depth-First Search, Breadth-First Search).
+            </li>
+            <li>
+              <strong>Search:</strong> Find a specific node or edge in the
+              graph.
+            </li>
+          </ul>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="illustration"
+          role="tabpanel"
+          aria-labelledby="illustration-tab"
+        >
+          <h2 class="text-center">Illustration</h2>
+          <div #networkContainer style="width:100%; height: 500px; border: 1px solid lightgray;"></div>
+          <button class="btn btn-primary" (click)="dfs()">DFS</button>
+          @if(alert.visible){
+          <div
+            class="alert alert-primary alert-dismissible fade show"
+            role="alert"
+          >
+            <strong>{{ alert.title }}</strong
+            >{{ alert.message }}
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="alert"
+              aria-label="Close"
+            ></button>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Button trigger modal
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Node</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <select class="form-select" name="from" id="">
+          @for (node of nodes; track node.name) {
+            <option [value]="node">node.name</option>
+          }
+        </select>
+         <select class="form-select" name="from" id="">
+          @for (node of nodes; track node.name) {
+            <option [value]="node">node.name</option>
+          }
+        </select>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="addConnectiosn">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Vertices</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="add()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
